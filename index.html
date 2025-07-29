@@ -378,3 +378,384 @@
     </footer>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Yatich Kapaw portfolio(Alkaline Yatz)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/61107a0cf8.js" crossorigin="anonymous"></script>
+    <style>
+        nav ul li a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: none;
+            transition: width 0.3s ease;
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger menu icon */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: black;
+            margin-right: 15px;
+        }
+
+        /* Ensure nav ul has no inline style conflicts */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-left: 5px;
+        }
+
+        /* Media Query for small devices (max-width: 768px) */
+       @media screen and (max-width: 768px) {
+
+        
+         .header-text img {
+        width: 60%;
+        max-width: 60%; /* Full width of container */
+        height: auto;
+    }
+    .hamburger {
+        display: block;
+        margin: 0; /* Ensure no margin offsets the icon */
+        padding: 0; /* Remove any padding */
+    }
+
+    nav {
+        position: relative; /* Ensure nav is the positioning context */
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul {
+         display: none; /* Hidden by default */
+            flex-direction: column;
+            position: absolute;
+            top: 50px; /* Matches hamburger icon position; adjust if needed */
+            right: 0; /* Align to left edge */
+            width: fit-content; /* Fit content width */
+            background-color: rgb(192, 187, 187);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            margin: 0; /* Remove any margins */
+            padding: 0; /* Remove any padding */
+            text-align: left; /* Align text left */
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    nav ul li {
+        margin: 2px 0; /* Small vertical spacing */
+        padding: 0; /* Remove any padding */
+        text-align: left; /* Ensure left alignment */
+        list-style: none; /* Remove default bullets */
+    }
+
+    nav ul li a {
+        display: block;
+        font-size: 18px;
+        line-height: normal;
+        padding: 2px 10px; /* Minimal vertical padding, enough horizontal for click area */
+        margin: 0; /* Remove any margins */
+        text-align: left; /* Reinforce left alignment */
+        text-decoration: none; /* Optional: remove underlines */
+    }
+
+    .tab-titles {
+        flex-direction: row; /* Explicitly horizontal */
+        justify-content: space-between; /* Distribute tabs evenly */
+        gap: 5px; /* Reduced gap for small screens */
+        width: 100%; /* Full width of container */
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="header" style="height: 100px; display: flex; align-items: center; justify-content: space-between; padding: 0 5px;">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <nav style="display: flex; align-items: center; width: 100%; justify-content: space-between;">
+                <img src="logo.png" alt="Logo of my personal brand" id="logo" style="max-height: 80px; margin-right: 5px;">
+                <i class="fas fa-bars hamburger" id="hamburger"></i>
+                <ul id="nav-menu">
+                    <li><a href="#header" style="text-decoration: none; font-size: 16px; line-height: 100px; transition: all 0.3s ease; position: relative;" onmouseover="this.style.color='#ff5733'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='black'; this.style.transform='scale(1)';">Home</a></li>
+                    <li><a href="#About" style="text-decoration: none; font-size: 16px; line-height: 100px; transition: all 0.3s ease; position: relative;" onmouseover="this.style.color='#ff5733'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='black'; this.style.transform='scale(1)';">About</a></li>
+                    <li><a href="#services" style="text-decoration: none; font-size: 16px; line-height: 100px; transition: all 0.3s ease; position: relative;" onmouseover="this.style.color='#ff5733'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='black'; this.style.transform='scale(1)';">Services</a></li>
+                    <li><a href="#portfolio" style="text-decoration: none; font-size: 16px; line-height: 100px; transition: all 0.3s ease; position: relative;" onmouseover="this.style.color='#ff5733'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='black'; this.style.transform='scale(1)';">Projects</a></li>
+                    <li><a href="contact.html" style="text-decoration: none; font-size: 16px; line-height: 100px; transition: all 0.3s ease; position: relative;" onmouseover="this.style.color='#ff5733'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='black'; this.style.transform='scale(1)';">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="header-text">
+        <h1>Hi, I'm <strong style="font-family: fantasy; color: rgb(239, 85, 8);">Alkaline Yatz</strong><br><br><br> <br><br>A Junior Software Developer</h1>
+        <img src="software-developer-6521720.jpg" alt="An illustration representing software development" style="height: 300px; width: 600px;">
+    </div>
+
+    <div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="man-4568761.jpg" alt="A portrait of Alkaline Yatz">
+                </div>
+                <style>
+                    .tab-content {
+                        display: none;
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+                        position: absolute;
+                        background: white;
+                        padding: 15px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        width: 300px;
+                        z-index: 10;
+                    }
+
+                    .tab-titles {
+                        position: relative;
+                        display: inline-block;
+                        margin-right: 20px;
+                        cursor: pointer;
+                        font-weight: bold;
+                    }
+
+                    .tab-links {
+                        padding: 5px 10px;
+                        border-bottom: 2px solid transparent;
+                        transition: border-bottom 0.3s ease;
+                    }
+
+                    .tab-links:hover {
+                        border-bottom: 2px solid #007BFF;
+                    }
+                </style>
+
+                <div class="about-col-2">
+                    <h1 style="color: rgb(7, 7, 7);">About Me</h1><br><br>
+                    <p>I'm a Junior Software Developer with a passion for building clean, efficient, and user-focused code. With a strong foundation in CSS, HTML, JavaScript, and Dart, I love tackling complex problems and finding innovative solutions. I'm constantly learning and contributing to open-source projects in my free time. Currently, I am seeking opportunities where I can grow my skills and make an impact. Feel free to connect with me or check out my GitHub portfolio.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links" data-tab="Skills" style="color: rgb(90, 37, 4);">Skills</p>
+                        <div class="tab-content" id="Skills">
+                            <ul>
+                                <li><span>TECHNICAL SKILLS</span><br> Programming Languages: <br>
+                                .JavaScript<br>.CSS & HTML<br>.Python<br>.Dart with flutter<br> .Basic understanding of OOP principles</li>
+                                <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                                <li><span>Web/App Development</span><br>.Web App Development <br>.Building Android/iOS Apps</li>
+                                <li><span>Version Control</span><br>.Familiar with Git and GitHub/GitLab/Bitbucket for source control. <br>
+                                    .Ability to commit, push, pull, merge, and resolve conflicts.</li>
+                                <li><span>Backend Development </span><br>.Understanding of RESTful APIs and basic server-side programming.
+                                    <br>.Familiar with Node.js, Django.
+                                    <br>.Knowledge of databases (SQL & NoSQL, e.g., MySQL, MongoDB).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-titles">
+                        <p class="tab-links" data-tab="Experience" style="color: rgb(90, 37, 4);">Experience</p>
+                        <div class="tab-content" id="Experience">
+                            <ul>
+                                <li><span> The Alkaline Technologies (2024) </span><br> UI/UX designer and Founder of The Alkaline Technologies </li>
+                                <li><span> Adept College of Technology (2023) </span><br>Web App Development Trainer at Adept College of Technology</li>
+                                <li><span>SAMA Resource (2023)</span><br>AI Trainee at SAMA Resource</li>
+                                <li><span> Microsoft (2022) </span><br>Emerging market skills initiative bootcamp on digital freelancing/coding trainer</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-titles">
+                        <p class="tab-links" data-tab="Education" style="color: rgb(90, 37, 4);">Education</p>
+                        <div class="tab-content" id="Education">
+                            <ul>
+                                <li><span>2024</span><br>PLP Academy Africa</li>
+                                <li><span>2018-2023</span><br>B.Tech Renewable Energy, TUM</li>
+                                <li><span>2023</span><br>Adept College of Technology</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const tabs = document.querySelectorAll(".tab-links");
+                        const tabContents = document.querySelectorAll(".tab-content");
+                        const hamburger = document.getElementById("hamburger");
+                        const navMenu = document.getElementById("nav-menu");
+
+                        // Tabbed content functionality
+                        tabs.forEach(tab => {
+                            tab.addEventListener("mouseover", function () {
+                                const targetTab = document.getElementById(this.dataset.tab);
+
+                                tabContents.forEach(content => {
+                                    content.style.display = "none";
+                                    content.style.opacity = "0";
+                                });
+
+                                if (targetTab) {
+                                    targetTab.style.display = "block";
+                                    setTimeout(() => {
+                                        targetTab.style.opacity = "1";
+                                    }, 50);
+                                }
+                            });
+
+                            tab.addEventListener("mouseleave", function () {
+                                setTimeout(() => {
+                                    const targetTab = document.getElementById(this.dataset.tab);
+                                    if (targetTab) {
+                                        targetTab.style.opacity = "0";
+                                        setTimeout(() => {
+                                            targetTab.style.display = "none";
+                                        }, 300);
+                                    }
+                                }, 500);
+                            });
+                        });
+
+                        tabContents.forEach(content => {
+                            content.addEventListener("mouseenter", function () {
+                                clearTimeout(this.hideTimeout);
+                            });
+
+                            content.addEventListener("mouseleave", function () {
+                                this.style.opacity = "0";
+                                this.hideTimeout = setTimeout(() => {
+                                    this.style.display = "none";
+                                }, 300);
+                            });
+                        });
+
+                        // Hamburger menu toggle
+                        hamburger.addEventListener("click", function () {
+                            navMenu.classList.toggle("active");
+                        });
+
+                        // Ensure menu is hidden on small screens by default
+                        if (window.innerWidth <= 768) {
+                            navMenu.classList.remove("active");
+                        }
+
+                        // Handle window resize to maintain correct state
+                        window.addEventListener("resize", function () {
+                            if (window.innerWidth <= 768) {
+                                navMenu.classList.remove("active");
+                            } else {
+                                navMenu.classList.remove("active");
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+        <div class="container">
+            <h1>My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>I'm a passionate Web Designer who has created several commercial and personal websites.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>I design user-friendly websites and web applications.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>With a year of experience, I've created a number of user-friendly applications.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio">
+        <div class="container">
+            <h1>My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img style="max-width: 100px; height: auto;" src="personal portfolio.webp" alt="Portfolio Website Thumbnail">
+                    <h1>Personal Portfolio Website</h1>
+                    <p>A personal website to showcase my skills, projects, and contact information.</p>
+                    <a href="https://alkaline-yatz-portfolio.vercel.app/">View Project</a>
+                </div>
+                <div class="work">
+                    <img style="max-width: 100px; height: auto;" src="timber- grace .webp" alt="Timber & Grace Website Thumbnail">
+                    <h1>Timber & Grace</h1>
+                    <p>An online furniture store where people can order their furniture products through the website and they will be delivered to their doorstep.</p>
+                    <a href="https://online-furniture-store-tau.vercel.app/">View Project</a>
+                </div>
+                <div class="work">
+                    <img style="max-width: 100px; height: auto;" src="pata ao 254.webp" alt="Pata AO 254 Thumbnail">
+                    <h1>Pata AO 254</h1>
+                    <p>Pata AO 254 is a website that helps people within the major cities in Kenya to find houses for rent easily. It links people to available houses or the nearest house-agency.</p>
+                    <a href="https://pata-ao-254.vercel.app/">View Project</a>
+                </div>
+            </div>
+            <a href="see more.html" class="Btn">See More</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <a href="contact.html" class="Btn2" contact>Contact Me</a>
+    <a href="https://flowcv.com/resume/2jj6m15776in" class="Btn2" download>Download CV</a>
+    <div class="contact-right">
+        <form action="">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="Name" placeholder="Your Name" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="Email" placeholder="Your Email" required>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="Btn2">Submit</button>
+        </form>
+    </div>
+
+    <footer style="text-align: center; padding: 10px; background-color: #f1f1f1;">
+        <div class="social-icon">
+            <a href="https://wa.link/y8zz6m" style="color: green; margin: 0 10px;">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/example" style="color: blue; margin: 0 10px;">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/YatzaaAlkaline" style="color: rgb(4, 4, 70); margin: 0 10px;">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://github.com/example" style="color: rgb(55, 54, 54); margin: 0 10px;">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">
+            © 2024 Yatz Alkaline. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>
